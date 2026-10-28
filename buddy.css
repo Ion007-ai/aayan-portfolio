@@ -1,0 +1,43 @@
+/* ==== Netrunner buddy: a cool V-style character who patrols the bottom-left corner ==== */
+.buddy {
+  position: fixed;
+  left: 0;
+  bottom: 4px;
+  z-index: 55;
+  width: 110px;
+  height: 120px;
+  pointer-events: none;   /* only the character itself is clickable */
+}
+.buddy canvas {
+  display: block;
+  width: 110px;
+  height: 120px;
+  pointer-events: auto;
+  cursor: pointer;
+  background: transparent;
+}
+.buddy .bubble {
+  position: absolute;
+  left: 112px;
+  bottom: 88px;
+  min-width: 150px;
+  max-width: 230px;
+  padding: 8px 10px;
+  background: var(--yellow);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 60% 80%, 50% 100%, 40% 80%, 0 80%);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+}
+.buddy .bubble.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 760px) {
+  .buddy { width: 84px; height: 92px; bottom: 2px; }
+  .buddy canvas { width: 84px; height: 92px; }
+  .buddy .bubble { left: 86px; bottom: 62px; max-width: 170px; font-size: 0.72rem; }
+}
