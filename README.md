@@ -25,11 +25,6 @@ No build step is needed. Open `index.html` in a browser, or serve the folder:
 npx serve .
 ```
 
-## Deploy on AWS Amplify
-1. In the AWS Amplify console, choose **Host web app**.
-2. Connect this GitHub repository, or choose **Deploy without Git provider** and upload the folder.
-3. Amplify detects a static site. The build settings are optional: no build command, output directory `.`.
-
 ## Tech
 - HTML5, CSS3 (custom properties, responsive grid, reduced-motion support)
 - Vanilla JavaScript (no frameworks, no dependencies)
